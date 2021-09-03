@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div class="form-content">
+    <div class="form">
+
+        <div class="form-head add-headder">Person Address form
+            <a class="" routerLink="/home">
+                <img src="../assets/cancel.jpeg" alt="cancel">
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row-content form-content">
+    <form class="form-form" [formGroup]="personFormGroup" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-label class="label text">Full Name</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input class="name-input" matInput placeholder="Your name" formControlName="fullName">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-label class="label text">Phone Number</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input class="phoneNo-input" matInput placeholder="Your phone Number" formControlName="phoneNumber">
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-label class="label text">EmailId</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input class="emailId-input" matInput placeholder="Your phone Number" formControlName="emailId">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-label class="label text">Address</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <textarea matInput class="address-input" name="address" style="height:60px"
+                    formControlName="address"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="example-full-width">
+            <div class="cellContainer">
+                <mat-label class="label text">City</mat-label>
+                <mat-form-field appearance="outline">
+                    <mat-label>select city</mat-label>
+                    <mat-select class="city-input" name="city">
+                        <mat-option>Kokrajhar</mat-option>
+                        <mat-option>Kolkata</mat-option>
+                        <mat-option>Hajipur</mat-option>
+                        <mat-option>Guwahati</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="cellContainer">
+                <mat-label class="label text">State</mat-label>
+                <mat-form-field appearance="outline">
+                    <mat-label>select State</mat-label>
+                    <mat-select class="state-input" name="state">
+                        <mat-option>Assam</mat-option>
+                        <mat-option>West B</mat-option>
+                        <mat-option>Rajasthan</mat-option>
+                        <mat-option>Hariana</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="cellContainer">
+                <mat-label class="label text">Zip</mat-label>
+                <mat-form-field class="example-half-width" appearance="outline">
+                    <input class="zip-input" matInput placeholder="" formControlName="zip">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="buttonParent">
+            <div class="submit-reset">
+                <button mat-raised-button type="submit" class="button submitButton">Add</button>
+                <button mat-raised-button type="reset" class="resetButton button">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>
