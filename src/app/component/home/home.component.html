@@ -19,15 +19,16 @@
                 <th>Phone Number</th>
                 <th></th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr *ngFor="let personData of personDetails" >
+                <td>{{personData.fullName}}</td>
+                <td>{{personData.address}}</td>
+                <td>{{personData.city}}</td>
+                <td>{{personData.state}}</td>
+                <td>{{personData.zip}}</td>
+                <td>{{personData.phoneNumber}}</td>
                 <td></td>
                 <td>
-                    <img id="" src="../assets/delete.svg" alt="delete">
+                    <img id="" src="../assets/delete.svg" alt="delete" (click)="remove(personData.id)">
                     <img id="" src="../assets/create.svg" alt="edit">
                 </td>
             </tr>
