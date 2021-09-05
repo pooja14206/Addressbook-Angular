@@ -44,6 +44,16 @@ export class AddComponent implements OnInit {
           this.personFormGroup.patchValue({ 'emailId': person.emailId});
           this.personFormGroup.get('zip')?.setValue(person.zip);
           this.personFormGroup.patchValue({'phoneNumber': person.phoneNumber});
+
+          // const city: FormArray = this.personFormGroup.get('person')as FormArray;
+          // person.city.forEach(personElement => {
+          //   for (let index = 0; index < this.city.length; index++) {
+          //     if (this.city[index].name === personElement) {
+          //       this.city[index].checked = true;
+          //       city.push(new FormControl(this.city[index].value))
+          //     }
+          //   }
+          // })
     
         }
       })
@@ -60,6 +70,7 @@ export class AddComponent implements OnInit {
     } else {
       this.person = this.personFormGroup.value;
       this.httpService.addPersonData(this.person).subscribe(response => {
+        console.log(this.person)
         this.router.navigateByUrl("/home");
       });
     }

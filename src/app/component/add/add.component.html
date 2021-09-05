@@ -3,9 +3,11 @@
     <div class="form">
 
         <div class="form-head add-headder">Person Address form
-            <a class="" routerLink="/home">
-                <img src="../assets/cancel.jpeg" alt="cancel">
-            </a>
+            <span>
+                <a class="floatRight" routerLink="/home">
+                    <img src="../assets/cancel.jpeg" alt="cancel" class="img">
+                </a>
+            </span>
         </div>
     </div>
 </div>
@@ -43,32 +45,32 @@
 
         <div class="example-full-width">
             <div class="cellContainer">
-                <mat-label class="label text">City</mat-label>
+                <h4 class="label text">City</h4>
                 <mat-form-field appearance="outline">
                     <mat-label>select city</mat-label>
-                    <mat-select class="city-input" name="city">
-                        <mat-option>Kokrajhar</mat-option>
-                        <mat-option>Kolkata</mat-option>
-                        <mat-option>Hajipur</mat-option>
-                        <mat-option>Guwahati</mat-option>
+                    <mat-select class="city-input" name="city" formControlName="city">
+                        <mat-option value="kokrajhar">Kokrajhar</mat-option>
+                        <mat-option value="kolkata">Kolkata</mat-option>
+                        <mat-option value="hajipur"> Hajipur</mat-option>
+                        <mat-option value="guwahati"> Guwahati</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="cellContainer">
-                <mat-label class="label text">State</mat-label>
+                <h4 class="label text">State</h4>
                 <mat-form-field appearance="outline">
                     <mat-label>select State</mat-label>
-                    <mat-select class="state-input" name="state">
-                        <mat-option>Assam</mat-option>
-                        <mat-option>West B</mat-option>
-                        <mat-option>Rajasthan</mat-option>
-                        <mat-option>Hariana</mat-option>
+                    <mat-select class="state-input" name="state" formControlName="state">
+                        <mat-option value="assam">Assam</mat-option>
+                        <mat-option value="west B">West B</mat-option>
+                        <mat-option value="rajasthan">Rajasthan</mat-option>
+                        <mat-option value="hariana">Hariana</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
 
             <div class="cellContainer">
-                <mat-label class="label text">Zip</mat-label>
+                <h4 class="label text">Zip</h4>
                 <mat-form-field class="example-half-width" appearance="outline">
                     <input class="zip-input" matInput placeholder="" formControlName="zip">
                 </mat-form-field>

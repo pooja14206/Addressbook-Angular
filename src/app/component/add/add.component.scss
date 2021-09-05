@@ -9,7 +9,7 @@
 .form {
     width        : 55%;
     padding      : 10px 50px;
-    background   : rgb(51, 122, 230) 0% 0% no-repeat padding-box;
+    background   : rgb(68, 133, 231) 0% 0% no-repeat padding-box;
     box-shadow   : 0px 3px 6px white;
     border       : 1px solid #f5f5f5;
     border-radius: 8px;
@@ -19,7 +19,7 @@
 .form-head {
     font           : normal normal 20px/40px Roboto;
     letter-spacing : 0px;
-    color          : black;
+    color          : white;
     text-transform : capitalize;
     opacity        : 0.8;
     padding-bottom : 20px;
@@ -58,9 +58,23 @@ label {
     font-family: Roboto;
 }
 
+.floatRight {
+    float          : right;
+    padding        : 5px 18px;
+    // outline        : none;
+    cursor         : pointer;
+    text-decoration: none;
+    margin-left: 20px
+}
+
 .example-full-width {
     width: 100%;
 }
+
+// .img{
+//    margin-right: 160px;
+// }
+
 
 .form-form {
     width        : 55%;
