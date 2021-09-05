@@ -17,6 +17,8 @@
                 <mat-label class="label text">Full Name</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input class="name-input" matInput placeholder="Your name" formControlName="fullName">
+                    <mat-error>Name is required!! Name should start with capital latter and have minimum of 3 characters
+                    </mat-error>
                 </mat-form-field>
             </div>
 
@@ -24,6 +26,7 @@
                 <mat-label class="label text">Phone Number</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input class="phoneNo-input" matInput placeholder="Your phone Number" formControlName="phoneNumber">
+                    <mat-error>Phone Number is required!!</mat-error>
                 </mat-form-field>
             </div>
 
@@ -32,6 +35,7 @@
                 <mat-label class="label text">EmailId</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input class="emailId-input" matInput placeholder="Your phone Number" formControlName="emailId">
+                    <mat-error>a valid emailId is required!!</mat-error>
                 </mat-form-field>
             </div>
 
@@ -40,6 +44,8 @@
                 <mat-form-field class="example-full-width" appearance="outline">
                     <textarea matInput class="address-input" name="address" style="height:60px"
                         formControlName="address"></textarea>
+                    <mat-error>Phone Number is required!!</mat-error>
+
                 </mat-form-field>
             </div>
 
@@ -73,6 +79,7 @@
                     <h4 class="label text">Zip</h4>
                     <mat-form-field class="example-half-width" appearance="outline">
                         <input class="zip-input" matInput placeholder="" formControlName="zip">
+                        <mat-error>Phone Number is required!!</mat-error>
                     </mat-form-field>
                 </div>
             </div>
