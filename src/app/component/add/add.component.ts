@@ -22,6 +22,10 @@ export class AddComponent implements OnInit {
     private dataService: DataService,
     private activatedRouter: ActivatedRoute
   ) {
+
+     /**
+     * Added validations to the data.
+     */
     this.personFormGroup = this.formBuilder.group({
       fullName: new FormControl('', [Validators.required, Validators.pattern("^[A-Z]{1}[a-zA-Z\s]{2,}$")]),
       address: new FormControl('', Validators.required),
@@ -33,6 +37,10 @@ export class AddComponent implements OnInit {
     })
   }
 
+   /**
+   * This method set person object value of a particular person id in the personFormBuilder.
+   * It is called when we perform update().
+   */
   ngOnInit(): void {
     if (this.activatedRouter.snapshot.params['id'] != undefined) {
       this.dataService.currentPerson.subscribe(person => {
@@ -48,6 +56,11 @@ export class AddComponent implements OnInit {
       })
     }
    }
+
+   /**
+    * onSubmit method is common for Add a person or update a person.
+    * If person is already present it will update the recork or else add a new person to the addressbook.
+    */
 
   onSubmit(): void {
     if (this.activatedRouter.snapshot.params['id'] != undefined) {

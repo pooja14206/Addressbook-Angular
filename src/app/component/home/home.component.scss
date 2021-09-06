@@ -1,5 +1,6 @@
 $color-white            : #fff;
 $button-background-color:rgb(68, 133, 231);
+
 .main-content {
     display         : flex;
     flex-direction  : column;
@@ -23,21 +24,20 @@ $button-background-color:rgb(68, 133, 231);
             opacity       : 1;
         }
     }
-}  
+}
 
 .add-button {
-            font           : normal normal normal 22px/29px Roboto;
-            letter-spacing : 0px;
-            color          : #fff;
-            opacity        : 1;
-            background     : $button-background-color 0% 0% no-repeat padding-box;
-            // border         : none;
-            // border-radius  : 5px;
-            padding        : 5px 18px;
-            outline        : none;
-            cursor         : pointer;
-            text-decoration: none;
-        }
+    font              : normal normal normal 22px/29px Roboto;
+    letter-spacing    : 0px;
+    color             : #fff;
+    opacity           : 1;
+    background        : $button-background-color 0% 0% no-repeat padding-box;
+    padding           : 5px 18px;
+    outline           : none;
+    cursor            : pointer;
+    text-decoration   : none;
+}
+
 .table-main {
     width   : 80%;
     margin  : 0 auto;
@@ -51,8 +51,8 @@ $button-background-color:rgb(68, 133, 231);
     min-width      : 800px;
 }
 
-td img:last-child{
-    margin-left: auto;
+td img:last-child {
+    margin-left  : auto;
     margin-inline: 25px;
 }
 
@@ -60,4 +60,8 @@ td,
 th {
     text-align: left;
     padding   : 5px 15px;
+}
+
+.tr-style{
+    background-color: white;
 }

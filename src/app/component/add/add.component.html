@@ -2,7 +2,6 @@
 <div>
     <div class="form-content ">
         <div class="form">
-
             <div class="form-head add-headder" fxFlex>{{"Person Address form" | uppercase }}</div>
             <div>
                 <a class="floatRight" routerLink="/home">
@@ -11,8 +10,11 @@
             </div>
         </div>
     </div>
+
     <div class="row-content form-content">
         <form class="form-form" [formGroup]="personFormGroup" (ngSubmit)="onSubmit()">
+
+            <!-- Input Name -->
             <div>
                 <mat-label class="label text">Full Name</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
@@ -22,6 +24,7 @@
                 </mat-form-field>
             </div>
 
+            <!-- Input Phone Number -->
             <div>
                 <mat-label class="label text">Phone Number</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
@@ -30,7 +33,7 @@
                 </mat-form-field>
             </div>
 
-
+            <!-- Input Email Id -->
             <div>
                 <mat-label class="label text">EmailId</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
@@ -39,6 +42,7 @@
                 </mat-form-field>
             </div>
 
+            <!-- Input Address -->
             <div>
                 <mat-label class="label text">Address</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
@@ -50,6 +54,8 @@
             </div>
 
             <div fxLayout fxLayoutGap="25px">
+
+                <!-- Input City -->
                 <div>
                     <h4 class="label text">City</h4>
                     <mat-form-field appearance="outline">
@@ -62,6 +68,8 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
+
+                <!-- Input State -->
                 <div>
                     <h4 class="label text">State</h4>
                     <mat-form-field appearance="outline">
@@ -75,6 +83,7 @@
                     </mat-form-field>
                 </div>
 
+                <!-- Input Zip Code -->
                 <div>
                     <h4 class="label text">Zip</h4>
                     <mat-form-field class="example-half-width" appearance="outline">
@@ -85,8 +94,12 @@
             </div>
 
             <div fxLayout="row" fxLayoutGap="25px">
+
+                <!-- Add button for add new person -->
                 <div fxLayout="row-reverse" fxFlex="70"><button mat-stroked-button type="submit"
                         class="button submitButton">Add</button></div>
+
+                <!-- Reset Button -->
                 <div fxFlex="30"><button mat-stroked-button type="reset" class="resetButton button">Reset</button></div>
             </div>
         </form>

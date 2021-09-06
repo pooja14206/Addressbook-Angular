@@ -4,6 +4,8 @@
         <div class="person-detail-text">
             Person Details
         </div>
+
+        <!-- Add button redirect to the add page for adding new person to the addressbook -->
         <a class="add-button" routerLink="/add">
             <img src="../assets/plus.svg" alt="Add Person Logo">Add Person
         </a>
@@ -19,7 +21,7 @@
                 <th>Phone Number</th>
                 <th></th>
             </tr>
-            <tr *ngFor="let personData of personDetails">
+            <tr *ngFor="let personData of personDetails" class="tr-style">
                 <td>{{personData.fullName}}</td>
                 <td>{{personData.address}}</td>
                 <td>{{personData.city}}</td>
@@ -27,8 +29,12 @@
                 <td>{{personData.zip}}</td>
                 <td>{{personData.phoneNumber}}</td>
                 <td></td>
+                
+                
                 <td>
+                    <!-- delete person from the list -->
                     <img id="{{personData.id}}" src="../assets/delete.svg" alt="delete" (click)="remove(personData.id)">
+                    <!-- edit a existing person -->
                     <img id="{{personData.id}}" src="../assets/create.svg" alt="edit" (click)="update(personData)">
                 </td>
             </tr>
