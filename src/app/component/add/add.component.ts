@@ -91,9 +91,7 @@ export class AddComponent implements OnInit {
           console.log(response.message);
           this.router.navigateByUrl("/home");
           this.snackBar.open(response.message, "", { duration: 3000, verticalPosition: 'top' });
-        }, error =>{
-          this.snackBar.open('User alrady exist!', "", { duration: 3000, verticalPosition: 'top' })
-        });
+        },
     }
   }
 }
