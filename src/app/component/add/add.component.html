@@ -37,8 +37,9 @@
             <div>
                 <mat-label class="label text">EmailId</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input class="emailId-input" matInput placeholder="Your phone Number" formControlName="emailId">
-                    <mat-error>a valid emailId is required!!</mat-error>
+                    <input class="emailId-input" matInput placeholder="Your Email" formControlName="emailId">
+                    <mat-error >a valid emailId is required!!</mat-error>
+                    <mat-error>This email has been taken, please use another one.</mat-error>
                 </mat-form-field>
             </div>
 

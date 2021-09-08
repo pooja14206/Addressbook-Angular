@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable, NgZone } from '@angular/core';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class HttpService {
 
   private baseURL: string = "http://localhost:8080/address-book/";
-
+  
   constructor(private httpClient: HttpClient) { }
 
   getPersonData(): Observable<any> {
