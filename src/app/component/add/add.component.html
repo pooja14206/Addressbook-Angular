@@ -93,14 +93,26 @@
                 </div>
             </div>
 
-            <div fxLayout="row" fxLayoutGap="25px">
-
+            <div>
                 <!-- Add button for add new person -->
-                <div fxLayout="row-reverse" fxFlex="70"><button mat-stroked-button type="submit"
-                        class="button submitButton">Add</button></div>
+                <div fxLayout fxLayoutGap="25px" *ngIf="router.url === '/add'; else editBlock">
+                    <div fxLayout="row-reverse" fxFlex="70"><button mat-stroked-button type="submit"
+                            class="button submitButton">Add</button></div>
+                    <div fxFlex="30"><button mat-stroked-button type="reset" class="resetButton button">Reset</button>
+                    </div>
 
-                <!-- Reset Button -->
-                <div fxFlex="30"><button mat-stroked-button type="reset" class="resetButton button">Reset</button></div>
+                </div>
+                <!-- edit button for edit person -->
+                <ng-template #editBlock>
+                    <div fxLayout fxLayoutGap="25px">
+                        <div fxLayout="row-reverse" fxFlex="70">
+                            <button mat-stroked-button type="submit" class="button submitButton">Edit</button>
+                        </div>
+                        <div fxFlex="30"><button mat-stroked-button type="reset" class="resetButton button"
+                                routerLink="/home">Cancel</button>
+                        </div>
+                    </div>
+                </ng-template>
             </div>
         </form>
     </div>

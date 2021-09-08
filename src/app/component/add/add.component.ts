@@ -14,11 +14,13 @@ export class AddComponent implements OnInit {
 
   public person: Person = new Person;
   public personFormGroup: FormGroup;
-
+  public addButton: string = "Add";
+  // public editOperationOn: boolean = false;
+ 
   constructor(
     private formBuilder: FormBuilder,
     private httpService: HttpService,
-    private router: Router,
+    public router: Router,
     private dataService: DataService,
     private activatedRouter: ActivatedRoute
   ) {
@@ -35,6 +37,13 @@ export class AddComponent implements OnInit {
       zip: new FormControl('', Validators.required),
       phoneNumber: new FormControl('', Validators.required)
     })
+  }
+
+  isAddRoute() {
+    return this.router.url === 'add';
+  }
+  isEditRoute(){
+    return this.router.url === 'add/:id';
   }
 
    /**
@@ -64,6 +73,7 @@ export class AddComponent implements OnInit {
 
   onSubmit(): void {
     if (this.activatedRouter.snapshot.params['id'] != undefined) {
+      // this.editOperationOn = true;
       this.httpService.updatePersonData(this.activatedRouter.snapshot.params['id'],
         this.personFormGroup.value).subscribe(Response => {
           this.router.navigateByUrl("/home");
