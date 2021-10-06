@@ -19,8 +19,8 @@
                 <mat-label class="label text">Full Name</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input class="name-input" matInput placeholder="Your name" formControlName="fullName">
-                    <mat-error>Name is required!! Name should start with capital latter and have minimum of 3 characters
-                    </mat-error>
+                    <mat-error *ngIf="checkError('fullName', 'required')">Name is required.</mat-error>
+                    <mat-error *ngIf="checkError('fullName', 'pattern')">Name is invalid</mat-error>
                 </mat-form-field>
             </div>
 
@@ -29,7 +29,8 @@
                 <mat-label class="label text">Phone Number</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input class="phoneNo-input" matInput placeholder="Your phone Number" formControlName="phoneNumber">
-                    <mat-error>Phone Number is required!!</mat-error>
+                    <mat-error *ngIf="checkError('phoneNumber', 'required')">Phone number is required.</mat-error>
+                    <mat-error *ngIf="checkError('phoneNumber', 'pattern')">Phone number is invalid</mat-error>
                 </mat-form-field>
             </div>
 
@@ -38,8 +39,8 @@
                 <mat-label class="label text">EmailId</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input class="emailId-input" matInput placeholder="Your Email" formControlName="emailId">
-                    <mat-error >a valid emailId is required!!</mat-error>
-                    <mat-error>This email has been taken, please use another one.</mat-error>
+                    <mat-error *ngIf="checkError('emailId', 'required')">email is required.</mat-error>
+                    <mat-error *ngIf="checkError('emailId', 'email')">email is invalid</mat-error>
                 </mat-form-field>
             </div>
 
@@ -49,47 +50,44 @@
                 <mat-form-field class="example-full-width" appearance="outline">
                     <textarea matInput class="address-input" name="address" style="height:60px"
                         formControlName="address"></textarea>
-                    <mat-error>Phone Number is required!!</mat-error>
-
+                        <mat-error *ngIf="checkError('address', 'required')">Address is required.</mat-error>
                 </mat-form-field>
             </div>
 
             <div fxLayout fxLayoutGap="25px">
+                <!-- Input State -->
+                <div>
+                    <h4 class="label text">State</h4>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Select State</mat-label>
+                    <mat-select (selectionChange)="onChangeState($event.source.value)" ngDefaultControl formControlName="state">
+                        <mat-option *ngFor="let state of states" [value]="state">
+                            {{state}}
+                        </mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
 
                 <!-- Input City -->
                 <div>
                     <h4 class="label text">City</h4>
                     <mat-form-field appearance="outline">
                         <mat-label>select city</mat-label>
-                        <mat-select class="city-input" name="city" formControlName="city">
-                            <mat-option value="kokrajhar">Kokrajhar</mat-option>
-                            <mat-option value="kolkata">Kolkata</mat-option>
-                            <mat-option value="hajipur"> Hajipur</mat-option>
-                            <mat-option value="guwahati"> Guwahati</mat-option>
+                        <mat-select class="city-input" name="city" formControlName="city" >
+                         <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
 
-                <!-- Input State -->
-                <div>
-                    <h4 class="label text">State</h4>
-                    <mat-form-field appearance="outline">
-                        <mat-label>select State</mat-label>
-                        <mat-select class="state-input" name="state" formControlName="state">
-                            <mat-option value="assam">Assam</mat-option>
-                            <mat-option value="west B">West B</mat-option>
-                            <mat-option value="rajasthan">Rajasthan</mat-option>
-                            <mat-option value="hariana">Hariana</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
+                
 
                 <!-- Input Zip Code -->
                 <div>
                     <h4 class="label text">Zip</h4>
                     <mat-form-field class="example-half-width" appearance="outline">
                         <input class="zip-input" matInput placeholder="" formControlName="zip">
-                        <mat-error>Phone Number is required!!</mat-error>
+                        <mat-error *ngIf="checkError('zip', 'required')">Zip is required.</mat-error>
+                        <mat-error *ngIf="checkError('zip', 'pattern')">Zip is invalid</mat-error>
                     </mat-form-field>
                 </div>
             </div>

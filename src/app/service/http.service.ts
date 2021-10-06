@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -42,5 +42,19 @@ export class HttpService {
 */
   updatePersonData(id: number, body: any): Observable<any> {
     return this.httpClient.put(this.baseURL + "update/" + id, body);
+  }
+
+  getCity(state: any): Observable<any> {
+    return this.httpClient.get(this.baseURL + "getStateDetails");
+  }
+
+  getStateDetails(): Observable<any> {
+    return this.httpClient.get(this.baseURL + "getStateDetails");
+  }
+
+  getDataByID(id: number): Observable<any> {
+    return this.httpClient.get(this.baseURL + "get/",{
+      headers: new HttpHeaders(),
+      params: new HttpParams().append('id', id)});
   }
 }
